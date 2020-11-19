@@ -49,6 +49,10 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('about', 'PagesController@getAbout');
     Route::get('/', 'PagesController@getIndex');
     Route::resource('posts', 'PostController');
+
+    /*solving clousure*/
+    Route::get('api/user', ['as' => 'api/user', 'uses' => 'BlogController@getIndex']);
+
 });
 
 /* Index page is the page that shows all blog posts */
